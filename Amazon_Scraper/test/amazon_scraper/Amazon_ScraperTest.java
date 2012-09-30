@@ -52,6 +52,11 @@ public class Amazon_ScraperTest {
         CharSequence page_source_1 = amazon_scraper.retrieve_PageSource(url_1);
         String res1_item_name = amazon_scraper.retrieve_ItemName(page_source_1);
         assertEquals(res1_item_name.equals("London 2012 Olympic Mascots Union Jack Wenlock - 25cm"), true);
+        
+        String url_2 = "http://www.amazon.co.uk/dp/B005HHZ25Y";
+        CharSequence page_source_2 = amazon_scraper.retrieve_PageSource(url_2);
+        String res2_item_name = amazon_scraper.retrieve_ItemName(page_source_2);
+        assertEquals(res2_item_name.equals("Olympic Mascots 25cm Union Jack Wenlock"), true);
     }
     
     @Test
@@ -61,10 +66,10 @@ public class Amazon_ScraperTest {
         String res1_model_number = amazon_scraper.retrieve_ModelNumber(page_source_1);
         assertEquals(res1_model_number.equals("0773"), true);
         
-        // String url_2 = "http://www.amazon.co.uk/dp/B005HHZ25Y";
-        // CharSequence page_source_2 = amazon_scraper.retrieve_PageSource(url_2);
-        // String res2_model_number = amazon_scraper.retrieve_ModelNumber(page_source_2);
-        // assertEquals(res2_model_number.equals("0773"), true);
+        String url_2 = "http://www.amazon.co.uk/dp/B005HHZ25Y";
+        CharSequence page_source_2 = amazon_scraper.retrieve_PageSource(url_2);
+        String res2_model_number = amazon_scraper.retrieve_ModelNumber(page_source_2);
+        assertEquals(res2_model_number.equals("0773"), true);
         
     }
     

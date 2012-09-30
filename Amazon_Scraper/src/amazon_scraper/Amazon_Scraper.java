@@ -45,7 +45,7 @@ public class Amazon_Scraper {
     }
     
     public String retrieve_ItemName(CharSequence page_source){
-        String item_name_reg_ex = "<span\\s+id=\"btAsinTitle\">(.*)</span>";
+        String item_name_reg_ex = "<span\\s+id=\"btAsinTitle\">(.*?)</span>";
         String item_name = "-";
         Pattern pattern = Pattern.compile(item_name_reg_ex);
         Matcher matcher = pattern.matcher(page_source);
@@ -56,9 +56,9 @@ public class Amazon_Scraper {
     }
      
     public String retrieve_ModelNumber(CharSequence page_source){
-        String model_number_reg_ex = "<li><b>Item model number:</b>(.*)</li>";
+        String model_number_reg_ex = "<li><b>Item model number:</b>(.*?)</li>";
         String model_number = "-";
-        Pattern pattern = Pattern.compile(model_number_reg_ex);
+        Pattern pattern = Pattern.compile(model_number_reg_ex, Pattern.DOTALL | Pattern.UNIX_LINES);
         Matcher matcher = pattern.matcher(page_source);
         while(matcher.find()){
             model_number = matcher.group(1);
