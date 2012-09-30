@@ -1,0 +1,4 @@
+<span id="btAsinTitle"></span>
+<li><b>Item model number:</b> 0773</li>
+<div class="tsRow"><span class="tsLabel">Model Number</span><span>0773</span></div>
+
