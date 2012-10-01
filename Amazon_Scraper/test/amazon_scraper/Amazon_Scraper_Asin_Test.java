@@ -1,9 +1,7 @@
 package amazon_scraper;
 
-import java.util.ArrayList;
-import org.junit.After;
+
 import org.junit.AfterClass;
-import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -12,13 +10,13 @@ import static org.junit.Assert.*;
  *
  * @author petertran
  */
-public class Amazon_ScraperTest {
-    private Amazon_Scraper amazon_scraper;
+public class Amazon_Scraper_Asin_Test {
+    private Amazon_Scraper_Asin amazon_scraper;
     private String test_asin;
     
-    public Amazon_ScraperTest(){
+    public Amazon_Scraper_Asin_Test(){
         String[] asin = new String[]{"B005HHZ25Y", "B004YD8AZ6", "B005OXKYZE"};
-        amazon_scraper = new Amazon_Scraper(asin);
+        amazon_scraper = new Amazon_Scraper_Asin(asin);
         test_asin = amazon_scraper.get_Asins()[0];
     }
 

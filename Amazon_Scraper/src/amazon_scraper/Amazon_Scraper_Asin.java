@@ -9,11 +9,11 @@ import java.net.*;
 import java.io.*;
 import java.util.regex.*;
 
-public class Amazon_Scraper {
+public class Amazon_Scraper_Asin {
 
     private String[] asins;
     
-    public Amazon_Scraper(String[] asins){
+    public Amazon_Scraper_Asin(String[] asins){
         this.asins = asins;
     }
     
