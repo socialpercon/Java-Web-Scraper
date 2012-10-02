@@ -2,3 +2,6 @@
 <li><b>Item model number:</b> 0773</li>
 <div class="tsRow"><span class="tsLabel">Model Number</span><span>0773</span></div>
 
+<h3 class="newaps">
+    <a href="http://www.amazon.co.uk/Olympic-Mascots-30cm-Team-GB/dp/B005OXKYZE/ref=sr_1_1?ie=UTF8&amp;qid=1349214314&amp;sr=8-1"><span class="lrg bold">Olympic Mascots 30cm Team GB</span></a> <span class="med reg">by Olympic Mascots (<span class="bold">Toy</span> -18 Feb 2012)</span>
+    </h3>

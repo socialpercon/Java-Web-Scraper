@@ -4,9 +4,8 @@
  */
 package amazon_scraper;
 
-import org.junit.After;
+import java.util.ArrayList;
 import org.junit.AfterClass;
-import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -36,12 +35,20 @@ public class Amazon_Scraper_Item_Search_Test {
     }
     
     @Test
-    public void testGetItem_names_to_search(){
-    }
-
-    @Test
     public void testAppend_toAmazonAsin(){
         String result = amazon_scraper.append_toAmazonAsin(item_search_test);
         assertEquals(result.equals("http://www.amazon.co.uk/s/ref=nb_sb_noss?url=search-alias%3Daps&field-keywords=Olympic+Mascot+GB"), true);
+    }
+    
+    @Test
+    public void testRetrieve_ItemSearchResults(){
+        String search_url = "http://www.amazon.co.uk/s/ref=nb_sb_noss?url=search-alias%3Daps&field-keywords=Olympic+Mascot+GB";
+        CharSequence page_source = amazon_scraper.retrieve_PageSource(search_url);
+        System.out.println(page_source.length());
+        ArrayList<String> item_search_result = amazon_scraper.retrieve_ItemSearchResults(page_source);
+        System.out.println(item_search_result.size());
+        for(int index = 0; index < item_search_result.size(); index++){
+            System.out.println(item_search_result.get(index));
+        }
     }
 }

@@ -58,7 +58,7 @@ public class Amazon_Scraper_Asin {
     public String retrieve_ModelNumber(CharSequence page_source){
         String model_number_reg_ex = "<li><b>Item model number:</b>(.*?)</li>";
         String model_number = "-";
-        Pattern pattern = Pattern.compile(model_number_reg_ex, Pattern.DOTALL | Pattern.UNIX_LINES);
+        Pattern pattern = Pattern.compile(model_number_reg_ex);
         Matcher matcher = pattern.matcher(page_source);
         while(matcher.find()){
             model_number = matcher.group(1);
