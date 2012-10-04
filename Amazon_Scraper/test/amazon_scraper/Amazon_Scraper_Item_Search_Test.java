@@ -42,13 +42,12 @@ public class Amazon_Scraper_Item_Search_Test {
     
     @Test
     public void testRetrieve_ItemSearchResults(){
-        String search_url = "http://www.amazon.co.uk/s/ref=nb_sb_noss?url=search-alias%3Daps&field-keywords=Olympic+Mascot+GB";
+        String search_url = "file:///Users/petertran/Documents/Development/Amazon_Scraper/test/amazon_scraper/Test_Page_Source_2.html";
         CharSequence page_source = amazon_scraper.retrieve_PageSource(search_url);
-        System.out.println(page_source.length());
         ArrayList<String> item_search_result = amazon_scraper.retrieve_ItemSearchResults(page_source);
-        System.out.println(item_search_result.size());
-        for(int index = 0; index < item_search_result.size(); index++){
-            System.out.println(item_search_result.get(index));
-        }
+        assertEquals(item_search_result.size(), 3);
+        assertEquals(item_search_result.get(0).equals("http://www.amazon.co.uk/Olympic-Mascots-20cm-Plush-Mandeville/dp/B004YD7EIK/ref=sr_1_1?ie=UTF8&amp;qid=1349381071&amp;sr=8-1"), true);
+        assertEquals(item_search_result.get(1).equals("http://www.amazon.co.uk/Olympic-Mascots-20cm-Plush-Wenlock/dp/B004YD8AZ6/ref=sr_1_2?ie=UTF8&amp;qid=1349381071&amp;sr=8-2"), true);
+        assertEquals(item_search_result.get(2).equals("http://www.amazon.co.uk/Olympic-Mascots-25cm-Union-Wenlock/dp/B005HHZ25Y/ref=sr_1_3?ie=UTF8&amp;qid=1349381071&amp;sr=8-3"), true);     
     }
 }
