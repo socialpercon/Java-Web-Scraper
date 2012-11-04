@@ -47,6 +47,7 @@ public class Amazon_Scraper_Item_Search {
     public ArrayList<String> retrieve_ItemSearchResults(CharSequence page_source){
         ArrayList<String> item_search_result = new ArrayList<String>();
         String item_search_result_exp = "<h3\\s+class=\"newaps\"><a\\s+href=\"(.*?)\">";
+        // String item_search_result_exp = "<h3\\s+class=\"newaps\">(.*?)</h3>";
         Pattern pattern = Pattern.compile(item_search_result_exp);
         Matcher matcher = pattern.matcher(page_source);
         while(matcher.find()){
