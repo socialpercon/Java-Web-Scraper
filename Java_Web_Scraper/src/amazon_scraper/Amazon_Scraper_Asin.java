@@ -150,7 +150,7 @@ public class Amazon_Scraper_Asin {
         String[] toy_attributes = new String[5];
         String mod_num_reg_ex = "<li><b>Item model number:</b>(.*?)</li>";
         String rec_age_reg_ex = "<li><b>Manufacturer recommended age:</b>(.*?)</li>";
-        String pro_dim_reg_ex = "<li><b>Product Dimensions:</b>(.*?)</li>";
+        String pro_dim_reg_ex = "<li><b>\\s+Product\\s+Dimensions:\\s+</b>(.*?)</li>";
         Pattern pat_1 = Pattern.compile(mod_num_reg_ex);
         Pattern pat_2 = Pattern.compile(rec_age_reg_ex);
         Pattern pat_3 = Pattern.compile(pro_dim_reg_ex);
