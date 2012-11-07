@@ -28,6 +28,7 @@ public class Amazon_Scraper_Asin {
     }
     
     /* Class helper methods */
+    /* Create list of Amazaon standard identification numbers from CSV fil */
     private static String[][] createAsin_List(String asin_list_csv){
         String[][] asin_list = null;
         ArrayList<String> lines = new ArrayList<String>();
@@ -59,6 +60,7 @@ public class Amazon_Scraper_Asin {
         return asin_list;
     }
     
+    /* Export results of scraping to a CSV */
     public static void createCSV(String[][] attribute_result, int num_attribute){
         /* Create csv named with current date and time */
         DateFormat date_format = new SimpleDateFormat("yyMMddHHmmssZ");
@@ -94,22 +96,15 @@ public class Amazon_Scraper_Asin {
             System.out.println("Exception: " + ex.getMessage());
         }
     }
-    
-    /* Object methods */
-    public String[] getAsins(){
-        return asins;
-    }
-    
-    public String[][] getAsin_List(){
-        return asin_list;
-    }
-    
-    public String append_Asin_to_Amazon_URL(String asin){
+     
+    /* Create the URL of the Asin */
+    private static String append_Asin_to_Amazon_URL(String asin){
         String amazon_asin_url = "http://www.amazon.co.uk/dp/";
         return amazon_asin_url.concat(asin);
     }
     
-    public CharSequence retrieve_PageSource(String amazon_asin_url){
+    /* Get page source i.e. HTML code of the webpage visited */
+    private static CharSequence retrieve_PageSource(String amazon_asin_url){
         StringBuilder page_source = new StringBuilder();
         BufferedReader br = null;
         try {
@@ -125,6 +120,14 @@ public class Amazon_Scraper_Asin {
             System.out.println("Error: " + io_exception.getMessage());
         }
         return page_source;
+    }
+    
+    public String[] getAsins(){
+        return asins;
+    }
+    
+    public String[][] getAsin_List(){
+        return asin_list;
     }
     
     public String[][] retrieve_ToyAttributes(String[][] asin_list){
@@ -172,6 +175,8 @@ public class Amazon_Scraper_Asin {
         return toy_attributes;
     }
     
+}
+    
     /*
     public String retrieve_ItemName(CharSequence page_source){
         String item_name_reg_ex = "<span\\s+id=\"btAsinTitle\">(.*?)</span>";
@@ -197,4 +202,3 @@ public class Amazon_Scraper_Asin {
     **/
        
 
-}

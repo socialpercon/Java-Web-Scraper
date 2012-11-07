@@ -31,19 +31,23 @@ public class Amazon_Scraper_Asin_Test {
         System.out.println("Unit tests completed.");
     }
     
+    /*
     @Test
     public void testAppend_Asin_to_Amazon_URL(){
         String ex_result = "http://www.amazon.co.uk/dp/B005HHZ25Y";
         String result = amazon_scraper.append_Asin_to_Amazon_URL(test_asin);
         assertEquals(result.equals(ex_result), true);
     }
+    **/
     
+    /*
     @Test
     public void testRetrieve_PageSource(){
         String url = "file:///Users/petertran/Documents/Development/Amazon_Scraper/test/amazon_scraper/Test_Page_Source.html";
         CharSequence page_source = amazon_scraper.retrieve_PageSource(url);
         assertEquals(page_source.length(), 199);
     }
+    **/
     
     @Test
     public void testGetAsin_List(){
